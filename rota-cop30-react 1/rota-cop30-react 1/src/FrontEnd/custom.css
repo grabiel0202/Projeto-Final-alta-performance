@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --cor-fundo-site-global: #F4F8F4;
+  --cor-primaria-viva: #2E8B57;
+  --cor-primaria-viva-rgb: 46, 139, 87;
+  --cor-acento-caloroso: #FFC107;
+  --cor-fundo-elementos: #FFFFFF;
+  --cor-texto-principal: #212529;
+  --cor-texto-secundario: #495057;
+  --cor-borda-suave: #DEE2E6;
+  --fonte-titulos: 'Poppins', sans-serif;
+  --fonte-corpo: 'Open Sans', sans-serif;
+  --sombra-padrao: 0 4px 12px rgba(0,0,0,0.08);
+  --sombra-suave-container: 0 2px 10px rgba(0,0,0,0.06);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-link.active {
+  background-color: var(--cor-primaria-viva) !important;
+  color: white !important;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto-principal);
+  background-color: var(--cor-fundo-site-global);
+  position: relative;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+.custom-header {
+  color: var(--cor-texto-principal);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cor-borda-suave);
+  position: relative;
+  background-color: var(--cor-fundo-elementos);
+  z-index: 1000;
+  text-align: center;
+  box-shadow: var(--sombra-padrao);
+}
+
+.logo-img {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+.titulo-site {
+  font-family: var(--fonte-titulos);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.nav-centralizada {
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.nav-link {
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  color: var(--cor-texto-secundario) !important;
+  background-color: transparent;
+  padding: 8px 18px;
+  border-radius: 5px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--cor-primaria-viva) !important;
+  background-color: rgba(var(--cor-primaria-viva-rgb), 0.08);
+}
+
+.nav-link.active {
+  background-color: var(--cor-primaria-viva) !important;
+  color: white !important;
+}
+
+.secao-destaque {
+  padding-top: 60px;
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.imagem-cop30 {
+  border-radius: 8px;
+  box-shadow: var(--sombra-padrao);
+  animation: slowZoom 15s infinite ease-in-out;
+}
+
+.texto-cop30 h1 {
+  font-family: var(--fonte-titulos);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: 20px;
+}
+
+.texto-cop30 p {
+  font-family: var(--fonte-corpo);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  color: var(--cor-texto-secundario);
+}
+
+.shape-divider {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.shape-divider .shape-fill {
+  fill: var(--cor-fundo-elementos);
+}
+
+.container.content-block {
+  background-color: var(--cor-fundo-elementos);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: var(--sombra-suave-container);
+  margin-bottom: 40px;
+}
+
+.titulo-secao {
+  font-family: var(--fonte-titulos);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--cor-primaria-viva);
+  margin-bottom: 30px;
+}
+
+#pontos-turisticos, #restaurantes {
+    padding-top: 50px;
+}
+
+.card {
+  margin-bottom: 30px;
+  box-shadow: var(--sombra-padrao);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cor-fundo-elementos);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card-title {
+  font-family: var(--fonte-titulos);
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.5;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+.rating .fas, .rating .far, .rating .fa-star-half-alt {
+  color: var(--cor-acento-caloroso);
+  font-size: 0.9em;
+}
+.rating-text {
+  margin-left: 8px;
+  font-size: 0.85em;
+  color: #6c757d;
+}
+
+.sobre-secao {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.texto-sobre {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE57;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-whatsapp .fab {
+  margin-right: 10px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    width: 80px;
+  }
+
+  .custom-header {
+    padding: 15px 0;
+  }
+
+  .logo-img {
+    max-width: 100px;
+  }
+
+  .titulo-site {
+    font-size: 1.5rem;
+  }
+
+  .nav-centralizada {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    padding: 8px 12px;
+  }
+
+  .texto-cop30 h1 {
+    font-size: 2rem;
+  }
+
+  .texto-cop30 p {
+    font-size: 1rem;
+  }
+
+  .container.content-block {
+    padding: 20px;
+  }
+
+  .titulo-secao {
+    font-size: 1.8rem;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+  .nav-centralizada {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .nav-link {
+    width: 80%;
+    text-align: center;
+  }
+}
